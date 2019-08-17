@@ -24,7 +24,7 @@ async def hello(ctx):
 
 @bot.command()
 async def shakka(ctx):
-    """thorws you a sweet shakka"""
+    """throws you a sweet shakka"""
     await ctx.send('aloha :call_me:')
 
 @bot.command()
