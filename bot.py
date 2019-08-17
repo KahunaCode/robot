@@ -29,9 +29,12 @@ async def shakka(ctx):
 
 @bot.command()
 async def surf(ctx):
-    """queries weather.gov and gives the oahu surf report"""
+    """queries weather.gov and gives the Oahu surf report"""
     r = requests.get('https://www.weather.gov/source/hfo/xml/Surf.xml')
     root = ET.fromstring(r.content)
-    await ctx.send(root[0][9][2].text)
+    await ctx.send(
+        f"The {root[0][0].text} last updated {root[0][6].text}.\n"
+        f"{root[0][9][2].text}"
+        )
 
 bot.run(TOKEN)
